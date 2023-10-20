@@ -1,0 +1,16 @@
+```python
+# À partir des variables suivantes, et sans les modifier, formater la chaîne suivante pour obtenir le résultat suivant :
+# "Bonjour, je m'appelle Bobby, j'ai 0030 ans, je suis né le May 26 1992."
+
+# Printer la phrase
+
+from datetime import date 
+
+prenom         = "bobby"
+age            = 30
+date_naissance = date(1992, 5, 26)
+```
+
+<br>
+
+[Correction](Correction%20-%20Formater%20des%20chaînes%20de%20caractères.md)
