@@ -13,4 +13,4 @@ date_naissance = date(1992, 5, 26)
 
 <br>
 
-[Correction](Correction%20-%20Formater%20des%20chaînes%20de%20caractères.md)
+[Correction](Correction%20-%2010.%20Formater%20des%20chaînes%20de%20caractères.md)

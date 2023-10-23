@@ -6,13 +6,13 @@ melanger_les_pinceaux = "On m'appelle l'indécis"
 print(apostrophe)
 print(melanger_les_pinceaux)
 
-# Créer un objet de type chaîne de caractères
+# Créer une variable de type chaîne de caractères
 chaine = "Coucou"
-# Créer un objet de type nombre entier
+# Créer une variable de type nombre entier
 nombre_entier = 12
-# Créer objet de type nombre décimal
+# Créer une variable de type nombre décimal
 nombre_decimal = 3.1
-# Créer un objet de type booléen
+# Créer une variable de type booléen
 boolean = True
 
 # Vérifier si le type bool est bien une sous-classe du type int, et printer le résultat

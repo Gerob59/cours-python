@@ -7,8 +7,8 @@
 
 set_1 = {"coucou", True, 2, 't', 76, False, "test"}
 set_2 = {"python", 2.2, 'x', False, "test", 76, "la réponse D"}
+
+print(set_1.union(set_2))
+print(set_1.intersection(set_2))
+print(set_1.symmetric_difference(set_2))
 ```
-
-<br>
-
-[Correction](Correction/Correction%20-%20Les%20sets.md)

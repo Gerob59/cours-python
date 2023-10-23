@@ -1,3 +1,6 @@
+### Le dictionnaire :
+---
+
 ```python
 from pprint import pprint
 
@@ -45,40 +48,77 @@ mes_sites = {
 		]
 	}
 }
-
-# Contrainte : les codes proposés doivent fonctionner quelque soit le nombre de site et d'utilisateurs dans le dictionnaire.
 ```
 
-
->[!Tip ] La documentation de [pprint](https://docs.python.org/fr/3/library/pprint.html)
-
-
-Question 1 :
+### Question 1 :
+---
 
 ```python
 # Ajouter un nouvel utilisateur à "Mon super site" avec le nom, prénom, date de naissance et nombre d'abonnés de votre choix et printer le dictionnaire obtenu avec pprint pour obtenir un résultat plus lisible
+
+mes_sites[0]["utilisateurs"].append(
+	 {
+		"nom": "Test",
+		"prenom": "Test",
+		"date_naissance": "1997-12-28",
+		"nombre_abonnes": 872619
+	}
+)
+
+pprint(mes_sites)
 ```
 
-Question 2 :
+### Question 2 :
+---
 
 ```python
 # Supprimer l'abonnée Patricia Kaas et printer le dictionnaire obtenu avec pprint
+
+del mes_sites[0]["utilisateurs"][1]
+
+pprint(mes_sites)
 ```
 
-Question 3 :
+### Question 3 :
+---
 
 ```python
 # Retourner la somme du nombre d'abonnés de tous les utilisateurs de tous les sites à l'aide d'une boucle
-# Printer le résultat (16583728 sans votre utilisateur créé)
+# Printer le résultat
+
+total = 0
+for site in mes_sites.values():
+	for utilisateur in site["utilisateurs"]:
+		total += utilisateur["nombre_abonnes"]
+
+print("nombre total d'abonné de tous les utilisateurs:", total)
 ```
 
-Question 4 :
+### Question 4 :
+---
 
 ```python
 # Retourner la moyenne des âges en années des utilisateurs
-# Printer le résultat (~32.5 sans votre utilisateur créé)
+# Printer le résultat
+
+from datetime import datetime
+
+now = datetime.now() # objet datetime décrivant maintenant (date et heure)
+compteur = total = 0
+
+for value in mes_sites.values():
+	for utilisateur in value["utilisateurs"]:
+		# formattage de la date en objet datetime
+		formatted_date = datetime.fromisoformat(utilisateur["date_naissance"])
+
+		# objet timedelta à partir de la soustraction de 2 objets datetime
+		time_diff = now - formatted_date
+
+		# conversion des secondes obtenues en années
+		total += time_diff.days//365.25
+
+		# incrémentation du compteur pour faire la moyenne plus tard
+		compteur += 1
+
+print("moyenne d'âge des utilisateurs:", total / compteur)
 ```
-
-<br>
-
-[Correction](Corrections/Correction%20-%20Les%20dictionnaires.md)

@@ -27,4 +27,4 @@ print("Plus d'erreurs à signaler (ง ͠° ͟ل͜ ͡°)ง")
 
 <br>
 
-[Correction](Corrections/Correction%20-%20Les%20variables.md)
+[Correction](Correction%20-%206.%20Les%20variables.md)

@@ -35,4 +35,4 @@ for color in colors:
 
 <br>
 
-[Correction](Corrections/Correction%20-%20Les%20structures%20conditionnelles.md)
+[Correction](Correction%20-%2011.%20Les%20structures%20conditionnelles.md)
