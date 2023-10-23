@@ -1,4 +1,4 @@
-*Exemple de documentation de projet : [api rest python](https://github.com/Gerob59/fil_rouge_tp7_python/tree/main)*
+*Exemple de documentation de projet : [début api REST python](https://github.com/Gerob59/fil_rouge_tp7_python/tree/main)*
 
 ### Le README.md
 ---
