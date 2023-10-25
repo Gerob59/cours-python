@@ -10,7 +10,7 @@ L'objectif de cet exercice est d'appliquer les concepts de la Programmation Orie
 <font color="red">□</font> représente un attribut privé
 <font color="green">○</font> représente une méthode public
 
-![representaion_uml](uml%20-%20VehiculeFactory.png)
+![representaion_uml](Annexes/python-file/vehicule_factory/uml%20-%20VehiculeFactory.png)
 
 >[!TIP] Visibilité d'attributs
 >Quand on entend attribut privé, on pense getter et setter
