@@ -28,26 +28,7 @@
 ### Citations d'un écrivain
 ---
 
-À l'aide du package [`quote`](https://pypi.org/project/quote/), obtenable avec [`pip`](https://pypi.org/project/pip/), extraire 30 citations d'un des écrivains présents dans la liste suivante.
-
-| Auteur              |
-| ------------------- |
-| Edgar Allan Poe     |
-| Victor Hugo         |
-| Gustave Flaubert    |
-| Ernest Hemingway    |
-| Agatha Christie     |
-| Friedrich Nietzsche |
-| Arthur Schopenhauer |
-| Simone De Beauvoir  |
-| Guy De Maupassant   |
-| Voltaire            |
-| Emile Zola          |
-| Georges Orwell      |
-| Frank Herbert       |
-| Isaac Asimov        |
-| Tolkien             |
-| William Shakespeare |
+À l'aide du package [`quote`](https://pypi.org/project/quote/), obtenable avec [`pip`](https://pypi.org/project/pip/), extraire 30 citations de Edgar Allan Poe.
 
 >Concevoir un inventaire des titres de livres classés par fréquence d'apparition dans le résultat en ordre décroissant.
 
@@ -76,7 +57,26 @@ Au moins deux fonctions doivent être créées pour la conception de chacun de c
 ### Exercice supplémentaire
 ---
 
->À partir de la liste des auteurs de l'exercice 1, et en utilisant uniquement les fonctionnalités natives de Python, générer 30 citations pour chacun de ces auteurs et générer un set des mots en commun à tous ces auteurs.
+| Auteur              |
+| ------------------- |
+| Edgar Allan Poe     |
+| Victor Hugo         |
+| Gustave Flaubert    |
+| Ernest Hemingway    |
+| Agatha Christie     |
+| Friedrich Nietzsche |
+| Arthur Schopenhauer |
+| Simone De Beauvoir  |
+| Guy De Maupassant   |
+| Voltaire            |
+| Emile Zola          |
+| Georges Orwell      |
+| Frank Herbert       |
+| Isaac Asimov        |
+| Tolkien             |
+| William Shakespeare |
+
+>À partir de la liste des auteurs, et en utilisant uniquement les fonctionnalités natives de Python, générer 30 citations pour chacun de ces auteurs et générer un set des mots en commun à tous ces auteurs.
 >
   **Exemple** : si le mot "concombre" est utilisé dans une des citations de Victor Hugo, alors si "concombre" est présent dans une des citations de TOUS les auteurs, il doit être présent dans ce set.
 
