@@ -71,13 +71,14 @@ La clause `finally` permet d'exécuter un code quel que soit le résultat (qu'il
 
 ```python
 try:
-    resultat = 10 / 2
+    resultat = 10 / 0
 except ZeroDivisionError:
     print("Division par zéro détectée.")
 else:
     print("Aucune exception détectée.")
 finally:
     print("Fin de l'exécution.")
+print(resultat)
 ```
 
 <br>
@@ -91,8 +92,7 @@ Vous pouvez créer votre propre classe d'exception en héritant de la classe `Ex
 ```python
 class MonExceptionPersonnalisee(Exception):
     def __init__(self, message="Une erreur personnalisée s'est produite."):
-        self.message = message
-        super().__init__(self.message)
+        super().__init__(message)
 
 try:
     raise MonExceptionPersonnalisee

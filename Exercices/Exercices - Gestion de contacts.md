@@ -1,8 +1,8 @@
-*N'oubliez pas de faire un `main.py` pour créer vos objets et utiliser leurs méthodes afin d'être sur que votre code fonctionne.**
+*N'oubliez pas de faire un `main.py` pour créer vos objets et utiliser leurs méthodes afin d'être sur que votre code fonctionne.*
 
 <br>
 
-Le but de l'exercice est d'utiliser des dataclasses `Contact` et `Groupe` et de les contrôler avec un classe `Gestion`.
+Le but de l'exercice est d'utiliser des dataclasses `Contact` et `Groupe`.
 
 <br>
 

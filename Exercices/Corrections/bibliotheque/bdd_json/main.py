@@ -3,8 +3,8 @@ from bibliotheque import Bibliotheque
 
 
 if __name__ == "__main__":
-    bibliothèque = Bibliotheque()
-    bibliothèque.charger_bibliotheque()
+    bibliotheque = Bibliotheque()
+    bibliotheque.charger_bibliotheque()
 
     while True:
         print("\nMenu:")
@@ -23,32 +23,32 @@ if __name__ == "__main__":
             auteur = input("Auteur du livre : ")
             annee_publication = input("Année de publication : ")
             livre = LivreEmpruntable(titre, auteur, annee_publication)
-            bibliothèque.ajouter_livre(livre)
+            bibliotheque.ajouter_livre(livre)
             print("Livre ajouté à la bibliothèque.")
-            bibliothèque.sauvegarder_bibliotheque()
+            bibliotheque.sauvegarder_bibliotheque()
 
         elif choix == "2":
             titre = input("Titre du livre à retirer : ")
-            bibliothèque.retirer_livre(titre)
-            bibliothèque.sauvegarder_bibliotheque()
+            bibliotheque.retirer_livre(titre)
+            bibliotheque.sauvegarder_bibliotheque()
 
         elif choix == "3":
             print("Livres disponibles dans la bibliothèque:")
-            bibliothèque.lister_livres()
+            bibliotheque.lister_livres()
 
         elif choix == "4":
             titre = input("Titre du livre à emprunter : ")
-            bibliothèque.emprunter_livre(titre)
-            bibliothèque.sauvegarder_bibliotheque()
+            bibliotheque.emprunter_livre(titre)
+            bibliotheque.sauvegarder_bibliotheque()
 
         elif choix == "5":
             titre = input("Titre du livre à retourner : ")
-            bibliothèque.retourner_livre(titre)
-            bibliothèque.sauvegarder_bibliotheque()
+            bibliotheque.retourner_livre(titre)
+            bibliotheque.sauvegarder_bibliotheque()
 
         elif choix == "6":
             titre = input("Titre du livre à rechercher : ")
-            for livre in bibliothèque.livres:
+            for livre in bibliotheque.livres:
                 if livre.titre == titre:
                     livre.afficher_details()
                     break

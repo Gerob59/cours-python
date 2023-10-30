@@ -33,6 +33,8 @@ import csv
 with open('donnees.csv', mode='r') as fichier_csv:
     lecteur_csv = csv.reader(fichier_csv)
 
+	next(lecteur_csv) # skip une ligne, l'en-tête
+
     for ligne in lecteur_csv:
         print(ligne)
 ```

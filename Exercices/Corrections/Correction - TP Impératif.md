@@ -83,7 +83,7 @@ from typing import Dict
 # Le fichier 'titanic_survival.csv' doit se trouver dans le même répertoire que ce script.  
 with open('titanic_survival.csv', encoding='utf-8') as csvfile:  
     # Créer un lecteur CSV pour parcourir les lignes.  
-    reader = csv.reader(csvfile, delimiter=',')  
+    reader = csv.reader(csvfile, delimiter=';')  
   
     # Ignorer la première ligne contenant les en-têtes du CSV.  
     next(reader)  

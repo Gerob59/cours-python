@@ -55,6 +55,7 @@ Pour lire le contenu d'un fichier, vous pouvez utiliser la méthode `read()`.
 
 ```python
 contenu = fichier.read()
+contenu = fichier.readLine()
 print(contenu)
 ```
 

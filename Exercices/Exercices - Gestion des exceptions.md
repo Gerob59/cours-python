@@ -25,8 +25,6 @@ print(resultat)
 
 Assurez-vous de gérer correctement les exceptions et de retourner les messages d'erreur appropriés en cas d'erreur. Bonne chance !
 
-Bien sûr ! Voici un exercice sur les exceptions personnalisées en Python :
-
 <br>
 
 ### **Exceptions personnalisées**
