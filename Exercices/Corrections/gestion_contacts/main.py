@@ -1,8 +1,8 @@
-import csv
+# import csv
 from contact import Contact
 from groupe import Groupe
 
-les_groupes : [Groupe] = []
+# les_groupes : [Groupe] = []
 
 # def load_csv(fichier: str) -> None:
 #     try:
