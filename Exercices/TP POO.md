@@ -39,6 +39,8 @@
 
 ---
 
+Pas besoin de dataclass ici.
+
 > Créer une classe "Client" possédant un nom, un prénom, une adresse, et un numéro de sécurité sociale (NIR) composé de 15 chiffres. Un contrôle doit être réalisé sur le NIR au moment de la création d'un nouvel objet.
 
 > Créer une classe "CompteBancaire" dont le constructeur accepte les 3 paramètres suivants : - une date de création de type `string` au format "YYYY-MM-DD" - un client de type `Client` - un solde de type `float`
