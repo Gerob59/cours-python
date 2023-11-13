@@ -49,7 +49,7 @@ Pas besoin de dataclass ici.
 
 > La classe "CompteBancaire" possède également une propriété statique renvoyant la somme des soldes de tous les clients de la banque.
 
-> Deux comptes bancaires sont considérés comme égaux lorsque leur soldes sont égales.
+> Deux comptes bancaires sont considérés comme égaux lorsque leur soldes sont égales (méthode magique).
 
 > Créer 2 objets comptes bancaires, printer leur identifiant interne respectif, et printer leur égalité l'un avec l'autre.
 
