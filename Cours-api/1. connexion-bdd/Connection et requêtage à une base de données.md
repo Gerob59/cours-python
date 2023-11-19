@@ -12,6 +12,9 @@ MySQL et MariaDB sont des systèmes de gestion de base de données relationnelle
 
 3. **Open Source :**  Logiciels open source, ce qui signifie que vous pouvez les utiliser, les modifier et les distribuer librement.
 
+> [!INFO] mysql et mariadb
+> MariaDB est un fork de MySQL créé pour maintenir une alternative open source après l'acquisition de MySQL par Oracle. Les deux partagent une base commune mais diffèrent en termes de licence, communauté, et fonctionnalités.
+
 ### Installation de MySQL/MariaDB
 
 Pour installer MySQL avec Python, vous pouvez utiliser le module `mysql-connector-python`. Utilisez la commande suivante dans votre terminal :
@@ -43,8 +46,7 @@ import mysql.connector
 conn = mysql.connector.connect(
     host="localhost",
     user="votre_utilisateur",
-    password="votre_mot_de_passe"  # ,
-    # database="ma_base_de_donnees"  # spécifie si on veut accéder à une bdd précise
+    password="votre_mot_de_passe"
 )
 ```
 
@@ -66,6 +68,8 @@ cursor = conn.cursor()
 
 Pour commencer nos requêtes, nous devons créer une base de données et une table pour stocker nos données. Voici comment vous pouvez le faire en utilisant Python et le module `mysql-connector-python`.
 
+N'oubliez pas de changer le `ma_base_de_donnees` et `ma_table`.
+
 ```python
 # Créer une base de données
 cursor.execute("CREATE DATABASE IF NOT EXISTS ma_base_de_donnees")
@@ -85,6 +89,13 @@ cursor.execute("""
 # Valider et appliquer les changements
 conn.commit()
 ```
+
+Le `commit()` permet de mettre à jour la BDD.  Si on ne le fait pas, les modification resteront en local.
+
+> [!INFO] Importance du `commit`
+> Si vous faites des modification sans commit, avec un select pour verrez les modification apporté.
+> 
+> Sauf que si vous lancez une autre session, les modifications ne seront pas confirmées.
 
 <br>
 
@@ -136,6 +147,10 @@ conn.close()
 
 <br>
 
+[Exercice 1](Exercices%20accès%20BDD.md#Exercice%201)
+
+<br>
+
 
 ## Gestion des Erreurs et Bonnes Pratiques
 
@@ -148,6 +163,8 @@ Lors de l'accès à une base de données, il est crucial de mettre en place une 
 ### 1. Gestion des Erreurs
 
 La gestion des erreurs dans vos opérations de base de données est essentielle pour maintenir la robustesse de votre application. Utilisez des blocs `try/except` pour capturer et gérer les exceptions potentielles.
+
+On peut ajouter le `database=` si on connais déjà notre base cible. Cela évitera faire par la suite un `USE <database>`.
 
 ```python
 import mysql.connector
@@ -224,6 +241,11 @@ finally:
     if 'conn' in locals() and conn.is_connected():
         conn.close()
 ```
+
+> [!INFO] Rollback
+> Le rollback permet de revenir en arrière, on l'utilise dans le `except` pour annuler les toutes les modifications si une d'entre elles échouent.
+> 
+> Cela nous permet de ne pas avoir de MAJ partielle des données.
 
 <br>
 
@@ -302,6 +324,9 @@ pip install sqlalchemy
 
 Pour nous connecter à la base de donnée, il va nous falloir créer un `engine`
 
+> [!Warning] Dialecte et pilote
+> Il faut faire un `pip install PyMySQL` afin de pouvoir créer l'engine
+
 ```python
 from sqlalchemy import create_engine
 
@@ -311,9 +336,6 @@ engine = create_engine('mysql+pymysql://votre_utilisateur:votre_mot_de_passe@loc
 # Établir la connexion
 conn = engine.connect()
 ```
-
-> [!Warning] PyMySQL
-> Il faut faire un `pip install PyMySQL` afin de pouvoir créer l'engine
 
 <br>
 
@@ -339,10 +361,6 @@ class User(Base):
         return f"User(id={self.id!r}, name={self.name!r}, fullname={self.fullname!r})"
 ```
 
-Il existe aussi plein de façon différentes de relier les tables entre elles en mono ou bi-directionnel.
-
-Pour passer de mono en bi-directionnel, il faut ajouter des `back_populates` sur l'attribut de la table ciblé.
-
 <br>
 
 ### 4. Création des tables
@@ -356,7 +374,7 @@ Vous pouvez maintenant utiliser le modèle pour effectuer des opérations CRUD d
 
 <br>
 
-### 5. Exemples d'Opérations CRUD avec SQLAlchemy
+### 5. CRUD avec SQLAlchemy
 
 Afin d'ajouter des informations dans notre base de donnée, on doit ouvrir une `Session` qui prendra `engine` en paramètre afin de regrouper plusieurs instructions et les exécuter au moment du `session.commit()` pour actualiser la base de donnée.
 
@@ -456,16 +474,23 @@ session.close()
 
 <br>
 
+[Exercice 2](Exercices%20accès%20BDD.md#Exercice%202)
+
+<br>
+
 ## 7. Les différentes relations des tables
 
 ---
 
-#### One to many
+Il existe aussi plein de façon différentes de relier les tables entre elles en mono ou bi-directionnel.
+
+Pour passer de mono en bi-directionnel, il faut ajouter des `back_populates` sur l'attribut de la table ciblé.
+
+### One to many
 
 relation la plus fréquence dans la représentation des bases de données.
 
-> mono-directionnel
-
+- mono-directionnel
 ```python
 class Parent(Base):
     __tablename__ = "parent_table"
@@ -481,8 +506,7 @@ class Child(Base):
     parent_id: Mapped[int] = mapped_column(ForeignKey("parent_table.id"))
 ```
 
-> bi-directionnel
-
+- bi-directionnel
 ```python
 class Parent(Base):
     __tablename__ = "parent_table"
@@ -501,12 +525,11 @@ class Child(Base):
 
 <br>
 
-#### Many to one
+### Many to one
 
 C'est exactement la même chose que le one to many, sauf que l'ordre de la relation est inversé.
 
-> mono-directionnel
-
+- mono-directionnel
 ```python
 class Parent(Base):
     __tablename__ = "parent_table"
@@ -522,9 +545,7 @@ class Child(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
 ```
 
-
-> bi-directionnel et nullable  (python 3.10)
-
+- bi-directionnel et nullable  (python 3.10)
 ```python
 from __future__ import annotations
 
@@ -546,7 +567,7 @@ class Child(Base):
 
 <br>
 
-#### One to one
+### One to one
 
 Relation d'appartenance, une entité possède une autre entité. On peux choisir dans lequel des 2 cotés on souhaite stocké l'id de l'autre.
 
@@ -568,12 +589,11 @@ class Child(Base):
 
 <br>
 
-#### Many to many
+### Many to many
 
 pour cette partie, pour éviter du code en impératif, on va utiliser des tables d'associations.
 
-> mono-directionnal
-
+- mono-directionnal
 ```python
 from typing import Optional
 from sqlalchemy import ForeignKey, Integer
@@ -603,8 +623,7 @@ class Child(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
 ```
 
-> bi-directionnal
-
+- bi-directionnal
 ```python
 from typing import Optional
 from sqlalchemy import ForeignKey, Integer
@@ -675,6 +694,8 @@ p1.children.append(c1)
 
 ---
 
+### Enum (énumération)
+
 En plus de l'écrire en littéral, il est possible de créer une collection de type dans une classe afin de limiter les actions possibles.
 
 ```python
@@ -696,11 +717,15 @@ class SomeClass(Base):
     status: Mapped[Status]
 ```
 
+### Encapsulation de pseudo attribut
+
 Il est possible aussi de faire des méthodes pour englober plusieurs attribut et le gérer comme un pseudo nouvel attribut, plutôt que d'en créer un.
 
 ```python
 from sqlalchemy.ext.hybrid import hybrid_property
 from sqlalchemy.sql import case
+from sqlalchemy import Integer
+from sqlalchemy.orm import mapped_column
 
 
 class User(Base):
