@@ -1,3 +1,5 @@
+## <u>Impératif :</u>
+
 - [Introduction à python](0.%20Introduction%20à%20python.md)
 - [Installation du poste de travail](1.%20Installation%20du%20poste%20de%20travail.md)
 - Les type de données primitives
@@ -25,6 +27,9 @@
 - [Les annotations de type](22.%20Les%20annotations%20de%20type.md)
 - [Les modules](23.%20Les%20modules.md)
 - [Les environnements virtuels](24.%20Les%20environnements%20virtuels.md)
+
+## <u>POO :</u>
+
 - [La programmation orientée objet](1.%20La%20programmation%20orientée%20objet%20-%20Introduction.md)
 - [Les dataclasses](2.%20Les%20Dataclasses.md)
 - [La programmation orientée objet - Concepts avancés](3.%20La%20programmation%20orientée%20objet%20-%20Concepts%20avancés.md)
@@ -34,3 +39,19 @@
 	- [Le CSV](8.%20Le%20CSV.md)
 	- [Le JSON](9.%20Le%20JSON.md)
 - [Les exceptions](10.%20Les%20exceptions.md)
+
+## <u>Connexion BDD :</u>
+
+- [Installation et configuration mariaDB et Dbeaver](Cours/c.%20Connexion%20BDD/1.%20Installation%20et%20configuration%20mariaDB%20et%20Dbeaver.md)
+- [Connection et requêtage à une base de données](Cours/c.%20Connexion%20BDD/2.%20Connection%20et%20requêtage%20à%20une%20base%20de%20données.md)
+- SQLAlchemy
+	- [Introduction](Cours/c.%20Connexion%20BDD/3.%20SQLAlchemy%20-%20Introduction.md)
+	- [Relation des tables](Cours/c.%20Connexion%20BDD/4.%20SQLAlchemy%20-%20Relation%20des%20tables.md)
+	- [Concepts avancés](Cours/c.%20Connexion%20BDD/5.%20SQLAlchemy%20-%20Concepts%20avancés.md)
+
+## <u>Tests :</u>
+
+- 
+## <u>api :</u>
+
+- 

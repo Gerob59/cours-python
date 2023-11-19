@@ -1,11 +1,7 @@
-## Enoncé
-
----
-
 > [!INFO] Il faut tout faire en python
 
 1. Créer une base de donnée : véhicule
-2. créer un table voiture(id, nom, ...)
+2. Créer un table voiture(id, nom, ...)
 3. CRUD
 	- insérer 2 objets
 	- modifier 1 objet
