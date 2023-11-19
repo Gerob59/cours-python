@@ -8,3 +8,4 @@
 | Paramètre      | `a` et `b` dans `addition(a, b)`  | Variable de la signature d'une fonction qui va recevoir des valeurs lors de l'appel de cette même fonction.  |
 | Argument       | `a` et `b` dans `addition(a, b)`  | Variable extérieur à la fonction que l'on passe en paramètre à la fonction.  |
 | Signature de fonction | `def addition(a, b) -> float:` | L'ensemble des éléments d'une fonction avec son nom, ses paramètres avec leurs types et le type de retour de la fonction.  |
+
