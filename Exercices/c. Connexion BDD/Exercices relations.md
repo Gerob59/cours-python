@@ -7,7 +7,7 @@ Afficher les objets
 
 ## many to many
 
-Créez 2 tables avec une relation many to many : `Personne` et `Passport`
+Créez 2 tables avec une relation many to many : `Personne` et `Nationalité`
 Relation `bi-directional`
 Insérer 1 objet `Personne` et 1 objet `Passport`
 Afficher les objets
