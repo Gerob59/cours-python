@@ -21,3 +21,5 @@ def reverse_string(s):
 4. Ajoutez une nouvelle méthode de test appelée `test_reverse_string_special_characters` pour tester le comportement de la fonction avec une chaîne contenant des caractères spéciaux.
 
 5. Exécutez vos tests pour vous assurer que les fonctions fonctionne correctement dans divers scénarios.
+
+[[correction test unitaire]]
