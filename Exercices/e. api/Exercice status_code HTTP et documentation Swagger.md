@@ -57,7 +57,7 @@ fake_db: List[ItemResponse] = []
 5. **Suppression d'un item**
 	- Créez une route DELETE à l'endpoint "/item/{item_id}" pour supprimer un item en fonction de son ID.
 	- La route devrait renvoyer un message indiquant que l'item a été supprimé avec succès.
-	- Utilisez le modèle Pydantic `ItemResponse` pour spécifier la structure de la réponse.
+	- Renvoyez un json pour spécifier que l'objet a bien été supprimé
 	- Assurez-vous de gérer les cas où l'item n'est pas trouvé.
 
 [[Correction status_code HTTP et documentation Swagger]]
