@@ -4,4 +4,3 @@
 - d. Tests
 - e. API
 - f. Anaconda
-- z. Annexes GIT
