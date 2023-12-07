@@ -35,3 +35,6 @@ class Voiture(Vehicule):
 
     def accelerer(self) -> None:
         self.vitesse += 10
+        
+    def __class__(self) -> str:
+        return "Voiture"
